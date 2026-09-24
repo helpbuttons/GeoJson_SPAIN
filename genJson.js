@@ -29,7 +29,7 @@ async function walk(folder) {
       const provinceName = path.basename(basename).replace('.geojson','').replace('_', ' ');
       
       const content = await fs.readFile(filename, 'utf8')
-      files.push({ filename, name: provinceName, content: content });
+      files.push({ filename, name: provinceName, content: JSON.parse(content) });
     }
   }
 }
